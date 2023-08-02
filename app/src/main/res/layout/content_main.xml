@@ -9,25 +9,23 @@
     tools:context=".MainActivity"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:text="Level : "
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBaseline_toTopOf="parent"/>
+    
 
-    <EditText
-        android:id="@+id/editText"
+    <!--<fragment
+        android:id="@+id/nav_host_fragment_content_main2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_marginStart="0dp"
-        app:layout_constraintBaseline_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginLeft="8dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>-->
 
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="673dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"></LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
