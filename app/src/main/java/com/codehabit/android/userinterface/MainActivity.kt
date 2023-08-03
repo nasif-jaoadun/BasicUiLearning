@@ -1,5 +1,6 @@
 package com.codehabit.android.userinterface
 
+import android.graphics.Color
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import com.codehabit.android.userinterface.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        addTextView("Hello")
+        addTextView("From")
+        addTextView("Android")
 
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)
 //        appBarConfiguration = AppBarConfiguration(navController.graph)
@@ -33,6 +38,14 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
 
+    }
+
+    private fun addTextView(label: String){
+        val view = TextView(this)
+        view.text = label
+        view.textSize = 20f
+        view.setTextColor(Color.parseColor("#ff0000"))
+        binding.contentView.linearLayout.addView(view)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
