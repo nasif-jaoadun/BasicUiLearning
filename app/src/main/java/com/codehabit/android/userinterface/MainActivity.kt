@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "This is the entered name: ${binding.contentView.editText.text}", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "This is the entered name:", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
 
