@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
+import android.widget.Toast
 import com.codehabit.android.userinterface.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -34,9 +35,14 @@ class MainActivity : AppCompatActivity() {
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "This is the entered name:", Snackbar.LENGTH_LONG).show()
+            Snackbar.make(view, "This is the entered name:", Snackbar.LENGTH_LONG)
+                .setAction("Action", { showToast() }).show()
         }
 
+    }
+
+    private fun showToast() {
+        Toast.makeText(this, "New Click", Toast.LENGTH_LONG).show()
     }
 
     private fun addTextView(label: String){
