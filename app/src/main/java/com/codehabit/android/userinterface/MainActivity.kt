@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        addTextView("Hello")
-        addTextView("From")
-        addTextView("Android")
+        addTextView(getString(R.string.hello))
+        addTextView(getString(R.string.from))
+        addTextView(getString(R.string.android))
 
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)
 //        appBarConfiguration = AppBarConfiguration(navController.graph)
