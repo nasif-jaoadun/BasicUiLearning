@@ -1,6 +1,7 @@
 package com.codehabit.android.userinterface
 
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.codehabit.android.userinterface.databinding.ActivityMainBinding
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         addTextView(getString(R.string.hello))
         addTextView(getString(R.string.from))
         addTextView(getString(R.string.android))
+        displayImageAssets("monster01.webp")
 
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)
 //        appBarConfiguration = AppBarConfiguration(navController.graph)
@@ -41,6 +44,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun displayImageAssets(fileName : String){
+        assets.open(fileName).use {
+            val drawable = Drawable.createFromStream(it, null)
+            drawable?.let { it1 -> addImageView(it1) }
+        }
+    }
+
     private fun showToast() {
         Toast.makeText(this, "New Click", Toast.LENGTH_LONG).show()
     }
@@ -50,6 +60,12 @@ class MainActivity : AppCompatActivity() {
         view.text = label
         view.textSize = 20f
         view.setTextColor(Color.parseColor("#ff0000"))
+        binding.contentView.linearLayout.addView(view)
+    }
+
+    private fun addImageView(drawable : Drawable){
+        val view = ImageView(this)
+        view.setImageDrawable(drawable)
         binding.contentView.linearLayout.addView(view)
     }
 
