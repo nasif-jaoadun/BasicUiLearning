@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun addImageView(drawable : Drawable){
         val view = ImageView(this)
+        view.adjustViewBounds
         view.setImageDrawable(drawable)
         binding.contentView.linearLayout.addView(view)
     }
